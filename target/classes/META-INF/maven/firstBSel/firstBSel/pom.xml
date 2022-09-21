@@ -7,6 +7,10 @@
 	<packaging>jar</packaging>
 
 	<properties>
+		<source>${jdk.source.version}</source>
+		<target>${jdk.target.version}</target>
+		<complianceLevel>${jdk.source.version}</complianceLevel>
+
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
@@ -16,7 +20,12 @@
 		<browserstack-local-java.version>1.0.6</browserstack-local-java.version>
 		<config.file>config/sample-local-test.testng.xml</config.file>
 	</properties>
+
+
 	<dependencies>
+
+
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -74,25 +83,9 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>com.browserstack</groupId>
-				<artifactId>automate-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<configuration>
-					<source>${jdk.source.version}</source>
-					<target>${jdk.target.version}</target>
-					<complianceLevel>${jdk.source.version}</complianceLevel>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
@@ -168,4 +161,6 @@
 			</build>
 		</profile>
 	</profiles>
+
+
 </project>
